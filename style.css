@@ -1,0 +1,189 @@
+/* UTILS */
+
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.gap {
+  gap: 2.4rem;
+}
+
+/* GENERAL */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 2.4rem;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  font-family: 'Barlow', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Bevan', cursive;
+  font-weight: 400;
+}
+h1 {
+  font-size: 5.6rem;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: rgb(131, 58, 180);
+  position: relative;
+  background-image: linear-gradient(90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%);
+  background-position: bottom;
+  background-size: 0 0.3rem;
+  background-repeat: no-repeat;
+  transition: background-size .15s ease-in-out;
+}
+a:not(.social):not(.button--primary):hover {
+  color: rgb(131, 58, 180);
+  background-size: 100% 0.3rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.page-width {
+  width: 100%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button--primary {
+  display: block;
+  padding: 1.6rem 2.4rem;
+  font-family: 'Bevan', cursive;
+  border-radius: .8rem;
+  background-color: rgb(131, 58, 180);
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background-position: 0 100%;    
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  transition: background-size .15s ease-in-out;
+  margin-top: 2.4rem;
+}
+.button--primary:hover {
+  background-size: 100% 100%;
+  color: #fff;
+}
+header {
+  margin-top: 2.4rem;
+}
+header img {
+  width: auto;
+  height: 25rem;
+}
+main {
+  width: 100%;
+}
+.card {
+  background-color: white;
+  border-radius: .8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+  padding: 2.4rem;
+}
+.card img {
+  height: 10rem;
+  width: auto;
+  margin-top: -6.6rem;
+}
+.bouncing span {
+  font-size: 8rem;
+  text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
+  transform: translate(0, 50%) rotate(4deg);
+  animation: jump 2s ease-in-out infinite;
+  display: inline-block;
+  font-family: "Bevan", cursive;
+  color: #fff;
+}
+.bouncing span:nth-child(1) {
+  animation-delay: 120ms;
+}
+.bouncing span:nth-child(2) {
+  animation-delay: 240ms;
+}
+.bouncing span:nth-child(3) {
+  animation-delay: 360ms;
+}
+.bouncing span:nth-child(4) {
+  animation-delay: 480ms;
+}
+.bouncing span:nth-child(5) {
+  animation-delay: 600ms;
+}
+@keyframes jump {
+  33% {
+    text-shadow: 0 6rem rgba(131, 58, 180, 1), 0 15rem rgba(131, 58, 180, 1);
+  }
+  50% {
+    transform: translate(0, 0) rotate(-4deg);
+    text-shadow: 0 0 rgba(253, 29, 29, 1), 0 0 rgba(253, 29, 29, 1);
+  }
+  66.67% {
+    text-shadow: 0 -6rem rgba(252, 176, 69, 1), 0 -15rem rgba(252, 176, 69, 1);
+  }
+}
+@media screen and (max-height: 200px) {
+  .bouncing {
+    transform: scale(0.3, 0.3);
+  }
+}
+@media screen and (max-width: 576px) {
+  .bouncing span {
+    font-size: 5rem;
+  }
+}
+footer {
+  margin-top: 4rem;
+}
+footer > div:first-child {
+  position: relative;
+  height: 20rem;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  border-top-left-radius: .8rem;
+  border-top-right-radius: .8rem;
+}
+footer > div:last-child {
+  height: 5.6rem;
+  background-image: url(images/brick.png);
+  background-size: 5.6rem;
+  border-bottom-left-radius: .8rem;
+  border-bottom-right-radius: .8rem;
+}
+.running {
+  width: 20rem;
+  position: absolute;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: run;
+  animation-duration: 5s;
+}
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20rem);
+  }
+}
